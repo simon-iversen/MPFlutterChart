@@ -12,7 +12,7 @@ dependencies:
   path_provider: 2.0.1
   screenshot: 0.3.0
   path_drawing: 1.0.0
-  image_gallery_saver: 1.6.9
+  image_gallery_saver: 1.7.0
   optimized_gesture_detector: 0.0.6
   vector_math: 2.1.1
   flutter:
