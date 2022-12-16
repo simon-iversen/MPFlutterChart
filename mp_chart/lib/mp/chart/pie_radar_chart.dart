@@ -5,7 +5,7 @@ import 'package:mp_chart/mp/core/highlight/highlight.dart';
 import 'package:mp_chart/mp/core/poolable/point.dart';
 import 'package:mp_chart/mp/core/utils/highlight_utils.dart';
 import 'package:mp_chart/mp/core/utils/utils.dart';
-import 'package:optimized_gesture_detector/details.dart';
+//import 'package:optimized_gesture_detector/details.dart';
 
 abstract class PieRadarChart<C extends PieRadarController> extends Chart<C> {
   const PieRadarChart(C controller) : super(controller);

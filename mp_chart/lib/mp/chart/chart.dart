@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:mp_chart/mp/controller/controller.dart';
-import 'package:optimized_gesture_detector/details.dart';
-import 'package:optimized_gesture_detector/optimized_gesture_detector.dart';
+//import 'package:optimized_gesture_detector/details.dart';
+//import 'package:optimized_gesture_detector/optimized_gesture_detector.dart';
 import 'package:screenshot/screenshot.dart';
 
 abstract class Chart<C extends Controller> extends StatefulWidget {
@@ -62,47 +62,29 @@ abstract class ChartState<T extends Chart> extends State<T> {
               ConstrainedBox(
                   constraints: BoxConstraints(
                       minHeight: double.infinity, minWidth: double.infinity),
-                  child: OptimizedGestureDetector(
-                      tapDown: (details) {
+                  child: GestureDetector(
+                      onTapDown: (details) {
                         onTapDown(details);
                       },
-                      singleTapUp: (details) {
+                      onTapUp: (details) {
                         onSingleTapUp(details);
                       },
-                      doubleTapUp: (details) {
+                      onDoubleTap: (details) {
                         onDoubleTapUp(details);
                       },
-                      moveStart: (details) {
-                        onMoveStart(details);
-                      },
-                      moveUpdate: (details) {
-                        onMoveUpdate(details);
-                      },
-                      moveEnd: (details) {
-                        onMoveEnd(details);
-                      },
-                      scaleStart: (details) {
+                      
+                      onScaleStart: (details) {
                         onScaleStart(details);
                       },
-                      scaleUpdate: (details) {
+                      onScaleUpdate: (details) {
                         onScaleUpdate(details);
                       },
-                      scaleEnd: (details) {
+                      onScaleEnd: (details) {
                         onScaleEnd(details);
                       },
-                      dragStart: (details) {
+                      dragStartBehavior: (details) {
                         onDragStart(details);
                       },
-                      dragUpdate: (details) {
-                        onDragUpdate(details);
-                      },
-                      dragEnd: (details) {
-                        onDragEnd(details);
-                      },
-                      needHorizontalConflictFunc:
-                          widget.controller.horizontalConflictResolveFunc,
-                      needVerticalConflictFunc:
-                          widget.controller.verticalConflictResolveFunc,
                       child: CustomPaint(painter: widget.controller.painter))),
             ])));
   }
